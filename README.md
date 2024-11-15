@@ -1,64 +1,117 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# User List
+![Main Ui](public/assets/image/user_list.png)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Chat Page
+![Main Ui](public/assets/image/chat.png)
 
-## About Laravel
+# Group Messaging Page
+![Main Ui](public/assets/image/group_messaging.png)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Chat Application
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Membership Platform with In-Webapp Messaging Feature
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+A working prototype for a membership platform featuring a real-time messaging
+system within the web app. This platform will allow an admin to manage members and
+enable messaging between users, ensuring seamless communication with a minimal lag
+time of up to 5 minutes.
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+(1) Installing dependencies
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```bash
+  composer install
+```
 
-### Premium Partners
+```bash
+  npm install
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
+(2) Setup, Migration and seeding
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Create app at https://dashboard.pusher.com/channels
+- Create app keys
+- Set your pusher app keys data in .env file
 
-## Code of Conduct
+Configure your database in the .env file.otherwise copy .env.example .
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Setup BROADCAST_DRIVER and PUSHER config
 
-## Security Vulnerabilities
+BROADCAST_DRIVER=pusher
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+PUSHER_APP_ID=your_pusher_app_id
+PUSHER_APP_KEY=your_pusher_app_key
+PUSHER_APP_SECRET=your_pusher_app_secret
+PUSHER_APP_CLUSTER=your_pusher_app_cluster
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Then, run the following command -
+
+
+ ```bash
+  php artisan migrate
+```
+
+```bash
+  php artisan db:seed
+```
+
+(3) Run the project
+
+```bash
+  npm run dev
+```
+
+```bash
+  php artisan serve
+```
+
+Done!! The application should now be running on your localhost at port 8000.
+
+## Accounts
+
+(1) Admin Accounts
+
+- admin1@gmail.com
+- admin2@gmail.com
+
+(2) User Accounts
+
+- john@gmail.com
+- sam@gmail.com
+
+  Default password is "password".
+
+  Or just register to create a user account.
+  
+  Login route  is '/login'.
+  
+  Register route  is '/register'.
+
+  Chat route  is '/chat'.
+
+  User route  is '/users'. (For Admin Only)
+
+    
+## Features
+
+- User Management
+- User Authenthication & Authorization (role-based)
+- Real-Time Private Messaging Between Users
+- Bulk Group Messaging by ADMIN
+
+## Languages
+
+PHP, Javascript, Mysql
+
+## Tech Stack
+
+Laravel Framework, Vue.js
+
+## Authors
+
+- [@pyaepyaehan](https://github.com/PyaeHan)
