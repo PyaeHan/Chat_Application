@@ -44,8 +44,11 @@ Setup BROADCAST_DRIVER and PUSHER config
 BROADCAST_DRIVER=pusher
 
 PUSHER_APP_ID=your_pusher_app_id
+
 PUSHER_APP_KEY=your_pusher_app_key
+
 PUSHER_APP_SECRET=your_pusher_app_secret
+
 PUSHER_APP_CLUSTER=your_pusher_app_cluster
 
 
